@@ -5,16 +5,19 @@
 */
 
 const ipfsToken = ''  // NFT.storage - https://nft.storage/docs/#get-an-api-token
-const walletIndex = 1 // EDIT
+const walletIndex = # // EDIT
 const royaltyAddress = '' // EDIT
-const nftAddress ='' // EDIT
-const royaltyPercent = 250 // 2.5%
-const walletFingerprint='' // EDIT
+const nftAddress = '' // EDIT
+const royaltyPercent = # // EDIT - An integer from 0-10000. e.g., 250 would be 2.5% royalty.
+const walletFingerprint= '' // EDIT
 const fee = ".00000001" // EDIT
 const collectionName = "" // EDIT
 const collectionDescription = "" // EDIT
-const collectionTwitter = "" // EDIT
-const collectionId = "" // EDIT
+const collectionTwitter = "" // EDIT - OPTIONAL
+const collectionId = "" // EDIT UUIDv4
+const collectionWebsite = "" // EDIT - OPTIONAL
+const collectionIcon = "" // EDIT - URI to icon image file - OPTIONAL
+const collectionBanner = "" // EDIT - URI to banner image file - OPTIONAL
 
 var nftImageData;
 var nftCID;
@@ -116,7 +119,19 @@ var generateJson = function(event) {
                          {
                                  "type": "Twitter",
                                  "value": collectionTwitter
-                         }
+                         },
+                         {
+                                  "type": "Website",
+                                  "value": collectionWebsite
+                          },
+                          {
+                                  "type": "Icon",
+                                  "value": collectionIcon
+                          },
+                          {
+                                  "type": "Banner",
+                                  "value": collectionBanner
+                          }
                  ]
          },
          /*
