@@ -89,8 +89,6 @@ var openLicenseFile = function(file) {
 	  console.log(fileArrayBuffer);
   }
   reader.readAsArrayBuffer(nftLicenseData);
-  console.log("reader");
-  console.log(reader);
 };
 
 var uploadtoIPFS = function(event) {
