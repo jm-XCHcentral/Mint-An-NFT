@@ -85,8 +85,6 @@ var openLicenseFile = function(file) {
   let reader = new FileReader();
   reader.onload = function(e) {
 	  fileArrayBuffer = new Uint8Array(reader.result);
-	  console.log("fileArrayBuffer:");
-	  console.log(fileArrayBuffer);
   }
   reader.readAsArrayBuffer(nftLicenseData);
 };
