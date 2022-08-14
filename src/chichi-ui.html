@@ -13,6 +13,8 @@
             <a class="navbar-brand" href="#" style="color:#468966;">Mint-an-NFT</a>
             <span class="navbar-text">By <a  target="_blank" href="https://twitter.com/xchcentral">@XCHcentral</a> for <a target="_blank" href="https://twitter.com/ChiChiverse_NFT">@ChiChiverse_NFT</a></span>
         </nav>
+
+        <!-- STEP 1. Upload image to IPFS via nft.storage -->
         <div class="row"><h4>Step 1: Upload image to IPFS via nft.storage</h4></div>
         <div class="row">
             <form id="ipfs-image-upload" enctype="multipart/form-data">
@@ -25,7 +27,9 @@
         </div>
         <div class="row"><img id='nft-viewer' style="height:200px; width:200px; padding-bottom: 10px;"></div>
         <div class="row"><button type="button" class="btn btn-primary" onclick="uploadtoIPFS(event)">Upload</button></div>
-        <div clas="row"><div id="image-alert" style="height:100; padding-top: 10px; padding-bottom: 10px;"></div></div>
+        <div class="row"><div id="image-alert" style="height:100; padding-top: 10px; padding-bottom: 10px;"></div></div>
+
+        <!-- STEP 2. Create Metadata Json and Upload to IPFS -->
         <div class="row"><h4>Step 2: Create Metadata Json and Upload to IPFS</h4></div>
         <form id="generate-json-metadata">
          <div class="row"><h5>NFT Metadata</h5></div>
@@ -91,10 +95,29 @@
                 <button type="button" class="btn btn-primary" onclick="uploadJsonIPFS()">Upload Json to IPFS</button>
             </div>
         </div>
-        <div clas="row">
+        <div class="row">
             <div id="metadata-alert"></div>
         </div>
-        <div class="row"><h4>Step 3: Generate CLI Command</h4></div>
+
+        <!-- STEP 3. Upload License to IPFS via nft.storage -->
+        <div class="row"><h4>Step 3: Upload license to IPFS via nft.storage</h4></div>
+        <div class="row">
+            <form id="ipfs-license-upload" enctype="multipart/form-data">
+                <div class="form group">
+                    <label for="licenseFile">Choose License File</label>
+                    <input type="file" accept="text/plain" class="form-control" id="licenseFile" aria-describedby="licenseFileHelp" placeholder="Enter file of license" onchange="openLicenseFile(event)">
+                    <small id="licenseFileHelp" class="form-text text-muted">Example: /this/is/license.txt</small>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <pre id="license-viewer" style="height:200px;"></pre>
+        </div>
+        <div class="row"><button type="button" class="btn btn-primary" onclick="uploadLicenseIPFS(event)">Upload</button></div>
+        <div class="row"><div id="license-alert" style="height:100; padding-top: 10px; padding-bottom: 10px;"></div></div>
+
+        <!-- STEP 4. Generate CLI Command -->
+        <div class="row"><h4>Step 4: Generate CLI Command</h4></div>
         <div class="row">
             <div class="form-group">
                 <button type="button" class="btn btn-primary" onclick="generateCliCommand()">Generate CLI Command</button>
@@ -103,6 +126,8 @@
         <div class="row">
             <div id="cli-command" style="height: 200px; border: 1px; "></div>
         </div>
+
+        <!-- STEP 5. Copy CLI Command and Execute in CLI prompt -->
         <div class="row"><h4>Step 4: Copy CLI Command and Execute in CLI prompt</h4></div>
             <div class="row">
                 <div class="form-group" style="padding-bottom: 60px">
@@ -110,9 +135,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- FOOTER -->
         <footer class="footer  bg-dark fixed-bottom" style="text-align: center; padding-top: 10px;height:70px; color:white;">
             <div><span>If you enjoy the tool please consider donating XCH or NFTs:</span></div>
             <div><span>xch1dwm59nranz0khzfzmv0j9g4tpwe4fx7ven0ptr9hufs2c0kgesxq8r7mws</span></div>
         </footer>
+
     </body>
     </html>

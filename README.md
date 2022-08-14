@@ -21,6 +21,7 @@ You'll want to register for an account at nft.storage and get an api (https://nf
 
 ### Running the minting tool
 * Update the constants in the top of file chichi.js
+* Save changes to chichi.js before continuing
 * Open chichi-ui.html in your up-to-date modern browser
 * Follow the steps in the tool to 
   * Upload image to ipfs via nft.storage
